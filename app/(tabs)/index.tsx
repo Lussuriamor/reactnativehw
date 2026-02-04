@@ -16,13 +16,11 @@ export default function HomeScreen() {
     >
       <View style={styles.overlay}>
 
-        {/* 🔹 Верхняя прямоугольная картинка */}
         <Image
           source={require("../../assets/images/BG2.png")}
           style={styles.headerImage}
         />
 
-        {/* 🔹 Карточка */}
         <View style={styles.card}>
           <Text style={styles.title}>Welcome</Text>
           <Text style={styles.subtitle}>Elaman</Text>
@@ -66,7 +64,7 @@ const styles = StyleSheet.create({
   headerImage: {
     width: "100%",
     maxWidth: 380,
-    height: 140,          // можно менять: 120–180
+    height: 140,          
     borderRadius: 18,
     marginBottom: 16,
     resizeMode: "cover",
