@@ -7,41 +7,45 @@ import {
   View,
 } from "react-native";
 
-export default function HomeScreen() {
+
+import { Counter } from "@/components/counter";
+import { homeContent } from "@/components/homescreen";
+
+export default function Index() {
   return (
     <ImageBackground
-      source={require("../../assets/images/BGG.png")}
+      source={require("@/assets/images/BGG.png")}
       style={styles.background}
       resizeMode="cover"
     >
       <View style={styles.overlay}>
-
         <Image
-          source={require("../../assets/images/BG2.png")}
+          source={require("@/assets/images/BG2.png")}
           style={styles.headerImage}
         />
 
         <View style={styles.card}>
-          <Text style={styles.title}>Welcome</Text>
-          <Text style={styles.subtitle}>Elaman</Text>
-          <Text style={styles.emoji}>👋</Text>
+          <Text style={styles.title}>{homeContent.title}</Text>
+          <Text style={styles.subtitle}>{homeContent.subtitle}</Text>
+          <Text style={styles.emoji}>{homeContent.emoji}</Text>
 
           <Image
-            source={require("../../assets/images/avatar.png")}
+            source={require("@/assets/images/avatar.png")}
             style={styles.avatar}
           />
 
-          <Text style={styles.name}>Elaman</Text>
-          <Text style={styles.role}>Mobile Developer</Text>
+          <Text style={styles.name}>{homeContent.name}</Text>
+          <Text style={styles.role}>{homeContent.role}</Text>
 
-          <Text style={styles.description}>
-            Passionate about building beautiful mobile experiences with React
-            Native and Expo.
-          </Text>
+          <Text style={styles.description}>{homeContent.description}</Text>
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>SEE MORE</Text>
+            <Text style={styles.buttonText}>
+              {homeContent.buttonText}
+            </Text>
           </TouchableOpacity>
+
+          <Counter initial={0} />
         </View>
       </View>
     </ImageBackground>
@@ -64,7 +68,7 @@ const styles = StyleSheet.create({
   headerImage: {
     width: "100%",
     maxWidth: 380,
-    height: 140,          
+    height: 140,
     borderRadius: 18,
     marginBottom: 16,
     resizeMode: "cover",
@@ -134,6 +138,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderRadius: 10,
     alignItems: "center",
+    marginBottom: 14,
   },
 
   buttonText: {
